@@ -1,6 +1,34 @@
 let addToy = false;
 
+
+// function fetchToys(){
+//   return fetch("http://localhost:3000/toys/:id", {
+//     method: "POST",
+//     header: {
+//       "Content-Type": "application/json",
+//       "Accept": "application/json"
+//     },
+//     body: JSON.stringify({
+//       name
+//     })
+//   })
+
+function fetchToys(){
+  return fetch("http://localhost:3000/toys")
+  .then(function(response){
+    return response.json()
+  })
+  .then(function(object){
+    console.log(object)
+  })
+}
+
+function renderToys
+
 document.addEventListener("DOMContentLoaded", () => {
+  fetchToys()
+
+
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
   addBtn.addEventListener("click", () => {
@@ -12,4 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toyFormContainer.style.display = "none";
     }
   });
+
+
+
 });
